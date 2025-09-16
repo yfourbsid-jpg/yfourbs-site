@@ -1,271 +1,99 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YFOURBS.ID</title>
-    <style>
-        body {font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #fff8f0; color: #333333;}
-        header {background: url('header-bg.jpg') no-repeat center center; background-size: cover; color: white; text-align: center; padding: 50px 10px;}
-        header img {max-width: 140px; height: auto; border-radius: 50%; display: block; margin: 0 auto 10px; border: 3px solid rgba(255,255,255,0.8);}
-        header h1 {margin: 0; font-size: 28px; text-shadow: 2px 2px 6px rgba(0,0,0,0.5);}
-        header h2 {margin: 5px 0 0; font-size: 20px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; text-shadow: 1px 1px 4px rgba(0,0,0,0.5);}
-        .container {max-width: 500px; margin: 20px auto; background: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0px 2px 8px rgba(0,0,0,0.1);}
-        h2 {text-align: center; color: #333333;}
-        label {display: block; margin: 10px 0 5px; color: #444444;}
-        input, select {width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #d4a373; border-radius: 5px; background-color: #fffaf5;}
-        button {width: 100%; padding: 10px; background-color: #d4a373; border: none; color: white; font-size: 16px; border-radius: 5px; cursor: pointer;}
-        button:hover {background-color: #b88350;}
-        footer {text-align: center; padding: 10px; margin-top: 20px; font-size: 14px; color: #555555;}
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YFOURBS.ID</title>
+  <style>
+    body {font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #fff8f0; color: #333;}
+    header {background: #d4a373; color: white; text-align: center; padding: 40px 10px;}
+    header img {max-width: 140px; height: auto; border-radius: 50%; display: block; margin: 0 auto 10px; border: 3px solid rgba(255,255,255,0.8);}
+    header h1 {margin: 0; font-size: 28px; text-shadow: 2px 2px 6px rgba(0,0,0,0.5);}
+    header h2 {margin: 5px 0 0; font-size: 20px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; text-shadow: 1px 1px 4px rgba(0,0,0,0.5);}
+    .container {max-width: 500px; margin: 20px auto; background: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0px 2px 8px rgba(0,0,0,0.1);}
+    h2 {text-align: center; color: #333;}
+    label {display: block; margin: 10px 0 5px; color: #444;}
+    input, select {width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #d4a373; border-radius: 5px; background-color: #fffaf5;}
+    button {width: 100%; padding: 10px; background-color: #d4a373; border: none; color: white; font-size: 16px; border-radius: 5px; cursor: pointer;}
+    button:hover {background-color: #b88350;}
+    footer {text-align: center; padding: 10px; margin-top: 20px; font-size: 14px; color: #555;}
+  </style>
 </head>
 <body>
-    <header>
-        <img src="./IMG_1386.jpeg" alt="Logo YFOURBS.ID">
-        <h1>YFOURBS.ID</h1>
-        <h2>TOP UP MURAH & CEPAT</h2>
-    </header>
+  <header>
+    <img src="logo.jpg" alt="Logo YFOURBS.ID">
+    <h1>YFOURBS.ID</h1>
+    <h2>TOP UP MURAH & CEPAT</h2>
+  </header>
 
-    <div class="container">
-        <h2>Form Order</h2>
-        <form onsubmit="sendToWhatsApp(event)">
-            <!-- Dropdown pertama: Pilih Layanan -->
-            <label for="layanan">📱 Pilih Layanan:</label>
-            <select id="layanan" name="layanan">
-                <option value="mlbb">Mobile Legends</option>
-                <option value="ff">Free Fire</option>
-                <option value="xlaxis">Pulsa XL/AXIS</option>
-                <option value="three">Pulsa Three</option>
-                <option value="smartfren">Pulsa Smartfren</option>
-                <option value="indosat">Pulsa Indosat</option>
-                value="telkomsel">Pulsa Telkomsel</option>
-                <option value="telkomsel">Pulsa telkomsel</option>
-                <option value="xldata">Paket Data XL Data Flex</option>
-                <option value="axisdata">Paket Data Axis Bronet</option>
-                <option value="threedata">Paket Data Three Happy</option>
-            </select>
+  <div class="container">
+    <h2>Form Order</h2>
+    <form onsubmit="sendToWhatsApp(event)">
+      <label for="layanan">📱 Pilih Layanan:</label>
+      <select id="layanan" name="layanan">
+        <option value="mlbb">Mobile Legends</option>
+        <option value="ff">Free Fire</option>
+        <option value="xlaxis">Pulsa XL/AXIS</option>
+        <option value="three">Pulsa Three</option>
+        <option value="smartfren">Pulsa Smartfren</option>
+        <option value="indosat">Pulsa Indosat</option>
+        <option value="telkomsel">Pulsa Telkomsel</option>
+      </select>
 
+      <label for="id">👤 ID / Nomor HP:</label>
+      <input type="text" id="id" name="id" placeholder="Masukkan ID Game atau Nomor HP" required>
 
+      <label for="paket">🎁 Pilih Paket:</label>
+      <select id="paket" name="paket">
+        <option>5 Diamond - Rp 1.500</option>
+        <option>12 Diamond - Rp 3.500</option>
+        <option>50 Diamond - Rp 8.500</option>
+        <option>Pulsa 10K - Rp 10.100</option>
+        <option>Pulsa 20K - Rp 20.100</option>
+      </select>
 
-            <!-- Input ID / Nomor HP -->
-            <label for="id">👤 ID / Nomor HP:</label>
-            <input type="text" id="id" name="id" placeholder="Masukkan ID Game atau Nomor HP" required>
+      <label for="pembayaran">💳 Metode Pembayaran:</label>
+      <select id="pembayaran" name="pembayaran">
+        <option value="BCA">BCA</option>
+        <option value="BRI">BRI</option>
+        <option value="Dana">Dana</option>
+      </select>
 
+      <button type="submit">Pesan Sekarang</button>
+    </form>
+  </div>
 
-            <!-- Dropdown kedua: Pilih Paket -->
-            <label for="paket">🎁 Pilih Paket:</label>
-            <select id="paket" name="paket">
-                <!-- Semua opsi paket yang tadi -->
-                <optgroup label="Diamond Mobile Legends">
-                    <option>5 Diamond - Rp 1.500</option>
-                    <option>12 Diamond - Rp 3.500</option>
-                    <option>19 Diamond - Rp 5.500</option>
-                    <option>28 Diamond - Rp 8.500</option>
-                    <option>36 Diamond - Rp 10.500</option>
-                    <option>44 Diamond - Rp 12.500</option>
-                    <option>59 Diamond - Rp 16.500</option>
-                    <option>85 Diamond - Rp 23.500</option>
-                    <option>170 Diamond - Rp 47.000</option>
-                    <option>240 Diamond - Rp 65.000</option>
-                    <option>296 Diamond - Rp 79.000</option>
-                    <option>370 Diamond - Rp 99.000</option>
-                    <option>514 Diamond - Rp 135.000</option>
-                    <option>706 Diamond - Rp 185.000</option>
-                    <option>878 Diamond - Rp 225.000</option>
-                    <option>1412 Diamond - Rp 360.000</option>
-                    <option>2195 Diamond - Rp 550.000</option>
-                </optgroup>
+  <footer>
+    &copy; 2025 YFOURBS.ID - Semua Hak Dilindungi
+  </footer>
 
-                <optgroup label="Diamond Free Fire">
-                    <option>5 Diamond - Rp 1.000</option>
-                    <option>12 Diamond - Rp 2.500</option>
-                    <option>50 Diamond - Rp 8.500</option>
-                    <option>70 Diamond - Rp 11.500</option>
-                    <option>100 Diamond - Rp 16.500</option>
-                    <option>140 Diamond - Rp 23.500</option>
-                    <option>210 Diamond - Rp 34.000</option>
-                    <option>355 Diamond - Rp 56.000</option>
-                    <option>720 Diamond - Rp 113.000</option>
-                    <option>1450 Diamond - Rp 220.000</option>
-                    <option>2180 Diamond - Rp 330.000</option>
-                    <option>3640 Diamond - Rp 550.000</option>
-                </optgroup>
-
-                <optgroup label="Pulsa XL/AXIS">
-                    <option>5K - Rp 5.100</option>
-                    <option>10K - Rp 10.100</option>
-                    <option>15K - Rp 15.100</option>
-                    <option>20K - Rp 20.100</option>
-                    <option>25K - Rp 25.100</option>
-                    <option>30K - Rp 30.100</option>
-                    <option>40K - Rp 40.100</option>
-                    <option>50K - Rp 50.100</option>
-                    <option>75K - Rp 75.100</option>
-                    <option>100K - Rp 100.100</option>
-                </optgroup>
-
-                <optgroup label="Pulsa Three">
-                    <option>5K - Rp 5.100</option>
-                    <option>10K - Rp 10.100</option>
-                    <option>15K - Rp 15.100</option>
-                    <option>20K - Rp 20.100</option>
-                    <option>25K - Rp 25.100</option>
-                    <option>30K - Rp 30.100</option>
-                    <option>40K - Rp 40.100</option>
-                    <option>50K - Rp 50.100</option>
-                    <option>75K - Rp 75.100</option>
-                    <option>100K - Rp 100.100</option>
-                </optgroup>
-
-                <optgroup label="Pulsa Smartfren">
-                    <option>5K - Rp 5.100</option>
-                    <option>10K - Rp 10.100</option>
-                    <option>15K - Rp 15.100</option>
-                    <option>20K - Rp 20.100</option>
-                    <option>25K - Rp 25.100</option>
-                    <option>30K - Rp 30.100</option>
-                    <option>40K - Rp 40.100</option>
-                    <option>50K - Rp 50.100</option>
-                    <option>75K - Rp 75.100</option>
-                    <option>100K - Rp 100.100</option>
-                </optgroup>
-
-                <optgroup label="Pulsa Indosat (IM3)">
-                    <option>5K - Rp 5.100</option>
-                    <option>10K - Rp 10.100</option>
-                    <option>15K - Rp 15.100</option>
-                    <option>20K - Rp 20.100</option>
-                    <option>25K - Rp 25.100</option>
-                    <option>30K - Rp 30.100</option>
-                    <option>40K - Rp 40.100</option>
-                    <option>50K - Rp 50.100</option>
-                    <option>75K - Rp 75.100</option>
-                    <option>100K - Rp 100.100</option>
-                    <!-- Pulsa Telkomsel -->
-<optgroup label="Pulsa Telkomsel">
-    <option>Pulsa Telkomsel 5K - Rp 5.100</option>
-    <option>Pulsa Telkomsel 10K - Rp 10.100</option>
-    <option>Pulsa Telkomsel 15K - Rp 15.100</option>
-    <option>Pulsa Telkomsel 20K - Rp 20.100</option>
-    <option>Pulsa Telkomsel 25K - Rp 25.100</option>
-    <option>Pulsa Telkomsel 30K - Rp 30.100</option>
-    <option>Pulsa Telkomsel 40K - Rp 40.100</option>
-    <option>Pulsa Telkomsel 50K - Rp 50.100</option>
-    <option>Pulsa Telkomsel 75K - Rp 75.100</option>
-    <option>Pulsa Telkomsel 100K - Rp 100.100</option>
-                </optgroup>
-
-                <optgroup label="Paket Data XL - Data Flex">
-                    <option>1GB 7 Hari - Rp 15.000</option>
-                    <option>3GB 30 Hari - Rp 35.000</option>
-                    <option>6GB 30 Hari - Rp 55.000</option>
-                    <option>10GB 30 Hari - Rp 80.000</option>
-                    <option>20GB 30 Hari - Rp 150.000</option>
-</optgroup>
-
-                </optgroup>
-
-                <optgroup label="Paket Data Axis - Bronet Bulanan">
-                    <option>1GB 30 Hari - Rp 15.000</option>
-                    <option>3GB 30 Hari - Rp 30.000</option>
-                    <option>6GB 30 Hari - Rp 50.000</option>
-                    <option>8GB 30 Hari - Rp 65.000</option>
-                    <option>12GB 30 Hari - Rp 85.000</option>
-                </optgroup>
-
-                <optgroup label="Paket Data Three - Happy Bulanan">
-                    <option>2GB 30 Hari - Rp 20.000</option>
-                    <option>5GB 30 Hari - Rp 45.000</option>
-                    <option>8GB 30 Hari - Rp 60.000</option>
-                    <option>10GB 30 Hari - Rp 70.000</option>
-                    <option>16GB 30 Hari - Rp 95.000</option>
-                    <option>25GB 30 Hari - Rp 130.000</option>
-                    <!-- Paket Data Indosat - Freedom Bulanan -->
-<optgroup label="Paket Data Indosat - Freedom Bulanan">
-    <option>Freedom Internet 2GB 30 Hari - Rp 20.000</option>
-    <option>Freedom Internet 5GB 30 Hari - Rp 45.000</option>
-    <option>Freedom Internet 8GB 30 Hari - Rp 65.000</option>
-    <option>Freedom Internet 10GB 30 Hari - Rp 75.000</option>
-    <option>Freedom Internet 20GB 30 Hari - Rp 125.000</option>
-    <option>Freedom Internet 30GB 30 Hari - Rp 165.000</option>
-    <option>Freedom Internet 50GB 30 Hari - Rp 220.000</option>
-</optgroup>
-
-                </optgroup>
-            </select>
-
-            <label for="pembayaran">💳 Metode Pembayaran:</label>
-<small style="display:block; margin:3px 0 8px; color:#007bff; font-size:11px;">
-    ℹ️ Detail nomor rekening akan dikirim otomatis via WhatsApp setelah Anda klik "Pesan Sekarang".
-</small>
-            <select id="pembayaran" name="pembayaran">
-                <option value="BCA">BCA</option>
-                <option value="BRI">BRI</option>
-                <option value="Dana">Dana</option>
-            </select>
-            
-<button type="submit">Pesan Sekarang</button>
-        </form>
-    </div>
-
-    <footer>
-        &copy; 2025 YFOURBS.ID - Semua Hak Dilindungi
-    </footer>
-
-    
-
-    <script>
-    // Daftar rekening pembayaran
+  <script>
     let rekeningList = {
-        "BCA": "BCA: 0670547736 a.n Bayu Sudiro",
-        "BRI": "BRI: 118501021852508 a.n Bayu Sudiro",
-        "Dana": "Dana: 088294984815 a.n Bayu Sudiro"
+      "BCA": "BCA: 0670547736 a.n Bayu Sudiro",
+      "BRI": "BRI: 118501021852508 a.n Bayu Sudiro",
+      "Dana": "Dana: 088294984815 a.n Bayu Sudiro"
     };
-
-    // Daftar harga paket
-    let hargaList = {
-        "50 Diamonds": 15000,
-        "100 Diamonds": 28000,
-        "150 Diamonds": 40000,
-        "Pulsa 10K": 10500,
-        "Pulsa 20K": 20500,
-        "Pulsa 50K": 50500,
-        "Pulsa 100K": 100500
-    };
-
-    function formatRupiah(angka) {
-        return "Rp " + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    }
-
-    
-    // Tampilkan preview otomatis saat halaman dibuka
-    
 
     function sendToWhatsApp(event) {
-        event.preventDefault();
+      event.preventDefault();
+      let layanan = document.getElementById("layanan").value;
+      let id = document.getElementById("id").value;
+      let paket = document.getElementById("paket").value;
+      let pembayaran = document.getElementById("pembayaran").value;
+      let infoPembayaran = rekeningList[pembayaran] || "Hubungi Admin untuk detail pembayaran";
 
-        let layanan = document.getElementById("layanan").value;
-        let id = document.getElementById("id").value;
-        let paket = document.getElementById("paket").value;
-        let pembayaran = document.getElementById("pembayaran").value;
+      let nomorWA = "6288294984815";
+      let pesan = `Halo Admin, saya ingin order:%0A%0A` +
+                  `📌 Layanan: ${layanan}%0A` +
+                  `🆔 ID/No HP: ${id}%0A` +
+                  `🎁 Paket: ${paket}%0A` +
+                  `💳 Metode: ${pembayaran}%0A` +
+                  `🏦 Rekening: ${infoPembayaran}%0A%0A` +
+                  `Mohon diproses.`;
 
-        let infoPembayaran = rekeningList[pembayaran] || "Hubungi Admin untuk detail pembayaran";
-        let harga = hargaList[paket] || 0;
-
-        let nomorWA = "6288294984815"; // WhatsApp Admin (088294984815) // WhatsApp Admin
-        let pesan = `Halo Admin, saya ingin order:%0A%0A` +
-                    `📌 Layanan: ${layanan}%0A` +
-                    `🆔 ID/No HP: ${id}%0A` +
-                    `🎁 Paket: ${paket}%0A` +
-                    `💳 Metode: ${pembayaran}%0A` +
-                    `🏦 Rekening: ${infoPembayaran}%0A` +
-                    `💰 Total Bayar: ${formatRupiah(harga)}%0A%0A` +
-                    `Mohon diproses.`;
-
-        let url = `https://wa.me/${nomorWA}?text=${pesan}`;
-        window.open(url, "_blank");
+      let url = `https://wa.me/${nomorWA}?text=${pesan}`;
+      window.open(url, "_blank");
     }
-    </script>
+  </script>
 </body>
 </html>
-
